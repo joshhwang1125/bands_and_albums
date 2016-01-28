@@ -23,7 +23,7 @@ class Album < ActiveRecord::Base
 
    validates :album_style, inclusion: ALBUM_STYLE
 
-   has_many :tracks
+   has_many :tracks, dependent: :destroy
 
    belongs_to :band
 
