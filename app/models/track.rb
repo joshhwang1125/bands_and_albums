@@ -13,5 +13,22 @@
 
 class Track < ActiveRecord::Base
 
+  TRACK_STYLE = %w(regular bonus)
+
+  validates(
+    :name,
+    :track_style,
+    :album_id,
+    presence: true
+  )
+
+  validates :track_style, inclusion: TRACK_STYLE
+
+  has_one :band,
+  through: :album,
+  source: :band
+
+  belongs_to :album
+
 
 end

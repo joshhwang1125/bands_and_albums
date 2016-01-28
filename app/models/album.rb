@@ -12,4 +12,19 @@
 
 class Album < ActiveRecord::Base
 
+  ALBUM_STYLE = %w(live studio)
+
+  validates(
+    :name,
+    :album_style,
+    :band_id,
+    presence: true
+  )
+
+   validates :album_style, inclusion: ALBUM_STYLE
+
+   has_many :tracks
+
+   belongs_to :band
+
 end
