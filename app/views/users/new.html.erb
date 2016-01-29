@@ -1,25 +1,26 @@
 <h1>Create New User!</h1>
 
 <form action="<%= users_url %>" method="post">
-<%= auth_token %>
+  <%= auth_token %>
 
 
-<%= render "shared/errors" %>
+  <%= render "shared/errors" %>
 
-<br>
-<label for="user_email">Email: </label>
-<input type="text"
-       name="user[email]"
-       id="user_email"
-       value="<%= @user.email %>">
-<br>
+  <br>
+  <label for="user_email">Email: </label>
+  <input type="text"
+         name="user[email]"
+         id="user_email"
+         value="<%= @user.email %>">
+  <br>
 
-<label for="user_password">Password:</label>
-<input type="text"
-       name="user[password]"
-       id="user_password"
-       value="<%= @user.password %>">
-<br>
+  <label for="user_password">Password:</label>
+  <input type="text"
+         name="user[password]"
+         id="user_password"
+         value="<%= @user.password %>">
+  <br>
 
 
-<input type="submit"
+<input type="submit">
+</form>

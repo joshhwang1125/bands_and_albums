@@ -19,6 +19,7 @@ class Track < ActiveRecord::Base
     :name,
     :track_style,
     :album_id,
+    :album,
     presence: true
   )
 

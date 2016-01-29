@@ -18,6 +18,7 @@ class Album < ActiveRecord::Base
     :name,
     :album_style,
     :band_id,
+    :band,
     presence: true
   )
 

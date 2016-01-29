@@ -1,0 +1,4 @@
+<h1>Edit <%= @album.name %></h1>
+
+<%= render "shared/errors" %>
+<%= render "shared/form_album", url: album_url(@album), method: "PATCH", album: @album %>

@@ -1,0 +1,28 @@
+
+<form action=<%= url %> method="POST">
+  <input type="hidden" name="_method" value=<%= method %>>
+
+  <%= auth_token %>
+
+  <label for="name">Name: </label>
+  <input type="text"
+         name="album[name]"
+         id="name"
+         value="<%= album.name %>">
+  <br>
+
+  <label for="album_style">Style:</label>
+  <select name="album[album_style]" id="album_style">
+    <option></option>
+    <% Album::ALBUM_STYLE.each do |style| %>
+      <option
+        <%= album.album_style == style ? "selected" : "" %>
+        value="<%= style %>">
+        <%= style %>
+      </option>
+    <% end %>
+  </select>
+  <br>
+
+  <input type="submit">
+</form>

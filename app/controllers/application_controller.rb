@@ -28,4 +28,8 @@ class ApplicationController < ActionController::Base
   def user_params
     params.require(:user).permit(:email, :password, :session_token)
   end
+
+  def musical_params
+    params.permit(:name, :style)
+  end
 end
